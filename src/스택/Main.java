@@ -13,8 +13,10 @@ public class Main {
                 char ch = expression.charAt(i);
                 if (ch == '(') {
                     st.push(ch);
+                    //System.out.println("Push Call : " + ch);
                 } else if (ch == ')') {
                     st.pop();
+                    //System.out.println("Pop Call : " + st.pop());
                 }
             }
             if (st.isEmpty()) {

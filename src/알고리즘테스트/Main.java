@@ -1,6 +1,5 @@
 package 알고리즘테스트;
 import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
         int t, a, b, c;

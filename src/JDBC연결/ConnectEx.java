@@ -7,6 +7,7 @@ import java.sql.Statement;
 
 public class ConnectEx {
     public static void main(String[] args) {
+        // DB 연결을 위해 getConnection 정보 생성
         String url="jdbc:mysql://localhost:3306/web?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Asia/Seoul";
         String id="root";
         String password="sphb8250";
@@ -31,13 +32,14 @@ public class ConnectEx {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
+            // DB 모두 사용 후 연결의 역순으로 끊기
             try {
                 if(rs != null) rs.close();
             } catch (Exception e2) {
                 e2.printStackTrace();
             }
             try {
-                if(stmt != null) rs.close();
+                if(stmt != null) stmt.close();
             } catch (Exception e2) {
                 e2.printStackTrace();
             }
